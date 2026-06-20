@@ -1,110 +1,119 @@
-# Event Management System
+# 🎉 Agenda Event Management System
 
-A full-stack Event Management System built using Node.js, Express.js, MongoDB Atlas, EJS, and Bootstrap. The application enables event organizers to create, manage, update, and delete events through an intuitive web interface while maintaining event details in a cloud database.
+A professional Event Management Web Application built using **Node.js, Express.js, MongoDB, Mongoose, EJS, Multer, and MVC Architecture**.
 
-## Features
+This project allows administrators to manage events efficiently with complete CRUD operations including event creation, viewing, editing, and deletion.
 
-* Create and manage events
-* Upload event images
-* View all available events
-* Update event information
-* Delete events
-* Store data in MongoDB Atlas
-* Responsive user interface
-* Event categorization
-* Event status management
-* Secure file upload handling with Multer
+---
 
-## Tech Stack
+## 🚀 Features
 
-### Frontend
+### Event Management
 
-* HTML5
-* CSS3
-* Bootstrap
-* EJS
+* Add New Event
+* View All Events
+* Edit Existing Events
+* Delete Events
+* Upload Event Images
 
-### Backend
+### Website Pages
+
+* Home Page
+* About Page
+* Blog Page
+* Blog Details Page
+* Tours Page
+* Videos Page
+* Discography Page
+* Contact Page
+
+### Technical Features
+
+* MVC Architecture
+* MongoDB Database Integration
+* Image Upload using Multer
+* Dynamic EJS Templates
+* Responsive UI Design
+* Reusable Header & Footer
+* Clean Folder Structure
+
+---
+
+# 🛠️ Technologies Used
 
 * Node.js
 * Express.js
-
-### Database
-
-* MongoDB Atlas
+* MongoDB
 * Mongoose
-
-### Additional Packages
-
+* EJS
 * Multer
-* Path
 * Nodemon
+* HTML5
+* CSS3
+* Bootstrap
 
-## Project Structure
+---
+
+# 📂 Project Structure
 
 ```bash
-Event-Management-System
+MVC-PROJECT
 │
 ├── config
 │   └── db.js
 │
-├── controller
-│   └── controller.js
+├── controllers
+│   └── eventController.js
 │
-├── model
+├── models
 │   └── eventModel.js
 │
 ├── routes
-│   └── route.js
-│
-├── views
-│   ├── header.ejs
-│   ├── footer.ejs
-│   ├── index.ejs
-│   ├── add-event.ejs
-│   ├── view-event.ejs
-│   └── edit-event.ejs
+│   └── eventRoutes.js
 │
 ├── public
 │   └── assets
-│       └── images
+│       ├── css
+│       ├── js
+│       ├── images
+│       └── uploads
+│
+├── views
+│   ├── partials
+│   │   ├── header.ejs
+│   │   └── footer.ejs
+│   │
+│   ├── index.ejs
+│   ├── about.ejs
+│   ├── blog.ejs
+│   ├── blog-details.ejs
+│   ├── contact.ejs
+│   ├── discography.ejs
+│   ├── tours.ejs
+│   ├── videos.ejs
+│   ├── addEvent.ejs
+│   ├── viewEvent.ejs
+│   └── editEvent.ejs
 │
 ├── app.js
 ├── package.json
-├── package-lock.json
-└── README.md
+└── package-lock.json
 ```
 
-## Database Schema
+---
 
-Each event contains the following fields:
-
-| Field         | Type   |
-| ------------- | ------ |
-| eventName     | String |
-| organizerName | String |
-| eventDate     | String |
-| eventTime     | String |
-| location      | String |
-| category      | String |
-| ticketPrice   | Number |
-| totalSeats    | Number |
-| description   | String |
-| status        | String |
-| eventImage    | String |
-
-## Installation
+# ⚙️ Installation
 
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/event-management-system.git
+git clone <repository-url>
 ```
 
-### Navigate to Project Directory
+### Navigate to Project Folder
 
 ```bash
-cd event-management-system
+cd MVC-PROJECT
 ```
 
 ### Install Dependencies
@@ -113,125 +122,113 @@ cd event-management-system
 npm install
 ```
 
-### Configure MongoDB Atlas
-
-Update your MongoDB connection string inside:
-
-```javascript
-config/db.js
-```
-
-Example:
-
-```javascript
-const mongoose = require("mongoose");
-
-mongoose.connect("YOUR_MONGODB_ATLAS_CONNECTION_STRING")
-.then(() => {
-    console.log("Database Connected Successfully");
-})
-.catch((err) => {
-    console.log(err);
-});
-
-module.exports = mongoose;
-```
-
-### Start Application
+### Required Packages
 
 ```bash
-npm start
+npm install express
+npm install ejs
+npm install mongoose
+npm install multer
+npm install nodemon
 ```
 
-or
+---
+
+# ▶️ Run Project
+
+### Development Mode
 
 ```bash
-npx nodemon app.js
+npm run dev
 ```
 
-The application will run on:
+### Production Mode
 
-```text
+```bash
+node app.js
+```
+
+Server URL:
+
+```bash
 http://localhost:9000
 ```
 
-## Application Workflow
+---
 
-### Add Event
+# 🗄️ Database
 
-Create a new event by providing:
+Database Name:
 
-* Event Name
-* Organizer Name
-* Event Date
-* Event Time
-* Location
-* Category
-* Ticket Price
-* Total Seats
-* Description
-* Status
-* Event Image
-
-### View Events
-
-Display all stored events from MongoDB Atlas.
-
-### Update Events
-
-Modify event information and upload a new image if required.
-
-### Delete Events
-
-Remove an event permanently from the database.
-
-## CRUD Operations
-
-| Operation | Description         |
-| --------- | ------------------- |
-| Create    | Add a new event     |
-| Read      | View all events     |
-| Update    | Edit existing event |
-| Delete    | Remove event        |
-
-## Screenshots
-
-Add project screenshots here:
-
-```text
-screenshots/
-├── home-page.png
-├── add-event.png
-├── view-events.png
-└── edit-event.png
+```bash
+event_management
 ```
 
-## Future Enhancements
+Collection:
 
-* User Authentication
-* Role-Based Access Control
-* Event Booking System
-* Ticket Generation
-* Online Payment Integration
-* Search and Filter Functionality
-* Event Analytics Dashboard
-* Email Notifications
-* QR Code Based Entry System
-* Admin Dashboard
+```bash
+events
+```
 
-## Learning Outcomes
+---
 
-This project demonstrates practical implementation of:
+# 📋 Event Fields
 
-* MVC Architecture
-* RESTful Routing
-* MongoDB Atlas Integration
-* File Upload Handling
+| Field          | Type   |
+| -------------- | ------ |
+| Event Name     | String |
+| Organizer Name | String |
+| Event Date     | Date   |
+| Event Time     | String |
+| Location       | String |
+| Category       | String |
+| Ticket Price   | Number |
+| Total Seats    | Number |
+| Description    | String |
+| Status         | String |
+| Event Image    | String |
+
+---
+
+# 📸 Screenshots
+
+### Home Page
+
+<img width="1902" height="981" alt="Screenshot 2026-06-20 134723" src="https://github.com/user-attachments/assets/22670fdc-5364-4632-bd57-599b79361c33" />
+
+
+### Add Event Page
+
+<img width="1904" height="989" alt="Screenshot 2026-06-20 134753" src="https://github.com/user-attachments/assets/84ddfe41-2fe8-44f9-80c4-7496d4bb88b8" />
+
+
+### View Event Page
+
+<img width="1906" height="978" alt="Screenshot 2026-06-20 134809" src="https://github.com/user-attachments/assets/35e4c28a-faad-45b4-a92e-f46e3204e0d5" />
+
+
+---
+
+# 🎯 Learning Outcomes
+
+* Understanding MVC Architecture
+* MongoDB Database Integration
 * CRUD Operations
-* Server-Side Rendering with EJS
-* Express Middleware
-* Cloud Database Management
-<img width="1351" height="5808" alt="localhost_9000_" src="https://github.com/user-attachments/assets/22bc7f4f-ab7f-4b10-937a-c0ac87bf4e50" />
-<img width="1351" height="1714" alt="localhost_9000_view-event" src="https://github.com/user-attachments/assets/d076a04a-2702-4cd1-a42a-2d2164105e6a" />
-<img width="1351" height="2143" alt="localhost_9000_edit-event_6a2d57d88906ec1509413ccc" src="https://github.com/user-attachments/assets/d09cfe8b-24d2-46ea-af4b-801e50eaabe7" />
+* File Upload Handling with Multer
+* Dynamic Rendering with EJS
+* Express Routing
+* Mongoose Schema Design
 
+---
+
+# 👨‍💻 Developed By
+
+**Saiyam Doshi**
+
+Full Stack Web Development Project
+
+---
+
+# 📜 License
+
+This project is developed for educational and learning purposes.
