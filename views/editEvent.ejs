@@ -1,0 +1,157 @@
+<%- include('header') %>
+
+<section class="contact-section section_padding black_bg">
+    <div class="container">
+
+        <div class="section_title text-center mb-80 pt-5">
+            <h3>Edit Event</h3>
+        </div>
+<form action="/update-event/<%= event._id %>" method="POST" enctype="multipart/form-data">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-4">
+                    <input type="text" name="eventName"
+                        value="<%= event.eventName %>"
+                        class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <input type="text" name="organizerName" 
+                        value="<%= event.organizerName %>"
+                        class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <input type="date"
+                        name="eventDate"
+                        value="<%= event.eventDate.toISOString().split('T')[0] %>"
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <input type="time"
+                        name="eventTime"
+                        value="<%= event.eventTime %>"
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <input type="text"
+                        name="location"
+                        value="<%= event.location %>"
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="col-md-6 mb-4">
+
+                    <select name="category" class="form-control w-100">
+
+                        <option value="Music"
+                            <%= event.category === 'Music' ? 'selected' : '' %>>
+                            Music
+                        </option>
+
+                        <option value="Entertainment"
+                            <%= event.category === 'Entertainment' ? 'selected' : '' %>>
+                            Entertainment
+                        </option>
+
+                        <option value="Sports"
+                            <%= event.category === 'Sports' ? 'selected' : '' %>>
+                            Sports
+                        </option>
+
+                        <option value="Technology"
+                            <%= event.category === 'Technology' ? 'selected' : '' %>>
+                            Technology
+                        </option>
+
+                        <option value="Business"
+                            <%= event.category === 'Business' ? 'selected' : '' %>>
+                            Business
+                        </option>
+
+                        <option value="Education"
+                            <%= event.category === 'Education' ? 'selected' : '' %>>
+                            Education
+                        </option>
+
+                        <option value="Other"
+                            <%= event.category === 'Other' ? 'selected' : '' %>>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <input type="number"
+                        name="ticketPrice"
+                        value="<%= event.ticketPrice %>"
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <input type="number"
+                        name="totalSeats"
+                        value="<%= event.totalSeats %>"
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                    <textarea name="description"
+                        rows="5"
+                        class="form-control"
+                        required><%= event.description %></textarea>
+                </div>
+
+                <div class="col-md-3 mb-4">
+
+                    <select name="status" class="form-control w-100">
+
+                        <option value="Active"
+                            <%= event.status === 'Active' ? 'selected' : '' %>>
+                            Active
+                        </option>
+
+                        <option value="InActive"
+                            <%= event.status === 'InActive' ? 'selected' : '' %>>
+                            InActive
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-2 mb-4 d-flex justify-content-end">
+                    <img src="/assets/images/<%= event.eventImage %>" width="250px"
+                    height="200px">
+                </div>
+
+                <div class="col-md-7 mb-4 w-100">
+                    <input type="file"
+                        name="eventImage"
+                        class="form-control">
+                </div>
+
+                <div class="col-md-12 text-center mt-4">
+                    <button type="submit" class="boxed-btn3">
+                        Update Event
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+<%- include('footer') %>

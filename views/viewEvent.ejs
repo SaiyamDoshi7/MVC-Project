@@ -1,0 +1,113 @@
+<%- include('header') %>
+
+<section class="view-section section_padding black_bg w-100">
+    <div class="container-fluid px-5">
+
+```
+    <div class="section_title text-center mb-5 mt-5">
+        <h3>All Events</h3>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center align-middle">
+
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Event Name</th>
+                    <th>Organizer</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Seats</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% if(allEvents && allEvents.length > 0){ %>
+
+                    <% allEvents.forEach((event,index)=>{ %>
+
+                    <tr>
+                        <td><%= index + 1 %></td>
+
+                        <td>
+                            <% if(event.eventImage){ %>
+                                <img src="/assets/images/<%= event.eventImage %>"
+                                     width="70px"
+                                     height="70px"
+                                     class="rounded"
+                                     style="object-fit:cover;">
+                            <% } else { %>
+                                No Image
+                            <% } %>
+                        </td>
+
+                        <td><%= event.eventName %></td>
+                        <td><%= event.organizerName %></td>
+
+                        <td>
+                            <%= event.eventDate ?
+                            new Date(event.eventDate).toLocaleDateString('en-GB')
+                            : '-' %>
+                        </td>
+
+                        <td>
+                            <%= event.eventTime || '-' %>
+                        </td>
+
+                        <td><%= event.location %></td>
+                        <td><%= event.category %></td>
+
+                        <td>₹ <%= event.ticketPrice %></td>
+
+                        <td><%= event.totalSeats %></td>
+
+                        <td>
+                            <span class="badge bg-<%= event.status === 'Active' ? 'success' : 'danger' %>">
+                                <%= event.status %>
+                            </span>
+                        </td>
+
+                        <td>
+                           <a href="/edit-event/<%= event._id %>" class="btn btn-warning btn-sm">
+    Edit
+</a>
+
+<a href="/delete-event/<%= event._id %>" 
+   class="btn btn-danger btn-sm"
+   onclick="return confirm('Are you sure?')">
+    Delete
+</a>
+                        </td>
+                    </tr>
+
+                    <% }) %>
+
+                <% } else { %>
+
+                    <tr>
+                        <td colspan="12">
+                            No Events Found
+                        </td>
+                    </tr>
+
+                <% } %>
+
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+```
+
+</section>
+
+<%- include('footer') %>
