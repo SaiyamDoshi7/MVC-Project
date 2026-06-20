@@ -107,7 +107,7 @@ MVC-PROJECT
 ### Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone <[repository-url](https://github.com/SaiyamDoshi7/MVC-Project.git)>
 ```
 
 ### Navigate to Project Folder
