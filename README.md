@@ -115,10 +115,43 @@ git clone (https://github.com/SaiyamDoshi7/MVC-Project.git)
 ```bash
 cd MVC-PROJECT
 ```
-### Project Explanation Video
+## 🎥 Project Presentation Video
 
-https://drive.google.com/file/d/1vZDrPKL-veBLN3Dg_rof_r7bLXrgLe_F/view?usp=sharing
+👉 **Project Presentation**
 
+[Watch Presentation Video](https://drive.google.com/file/d/1vZDrPKL-veBLN3Dg_rof_r7bLXrgLe_F/view?usp=sharing)
+
+This video explains:
+
+- Project Overview
+- MVC Architecture
+- Folder Structure
+- Database Design
+- CRUD Operations
+- Event Management Features
+- Working Demonstration
+
+---
+
+## 🎬 Live Project Demonstration
+
+👉 **Live Working Demo**
+
+[Watch Live Demo Video](https://drive.google.com/file/d/15KpvHflZkcX8xxz7UBrTs1xyrIeXs3Wy/view?usp=sharing)
+
+This demo showcases:
+
+- Home Page
+- About Page
+- Blog Section
+- Add Event
+- View Event
+- Edit Event
+- Delete Event
+- Image Upload Functionality
+- MongoDB Integration
+
+---
 ### Install Dependencies
 
 ```bash
