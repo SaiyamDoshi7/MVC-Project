@@ -1,4 +1,4 @@
-# 🎉 Agenda Event Management System
+#  Agenda Event Management System
 
 A professional Event Management Web Application built using **Node.js, Express.js, MongoDB, Mongoose, EJS, Multer, and MVC Architecture**.
 
